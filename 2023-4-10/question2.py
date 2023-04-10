@@ -21,3 +21,4 @@ class Solution:
         m, n = len(nums1), len(nums2)
         midval = (findKth((m + n + 1) // 2) + findKth((m + n + 2) // 2)) / 2# 合并奇偶两种情况
         return midval
+        
