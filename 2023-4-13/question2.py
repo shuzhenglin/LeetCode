@@ -3,9 +3,9 @@ class Solution:
         n, m = len(s), len(p)
         dp = [[False] * (m + 1)  for _ in range(n + 1)]
         dp[0][0] = True # 匹配0个字符时为True
-        for j in range(1, m+1):
+        for j in range(1, m + 1):
             if p[j - 1] == '*':
-                dp[0][j] = dp[0][j - 2] # 匹配0个字符串，类似'*'的字符为一组，复制0次，继承2个字符以前的状态
+                dp[0][j] = dp[0][j - 2] # 匹配0个字符串，类似'a*'的字符为一组，复制0次，继承2个字符以前的状态
         for i in range(1, n + 1):
             for j in range(1, m + 1):
                 if p[j - 1] != '*':
